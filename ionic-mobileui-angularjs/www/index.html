@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- 
+   Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. 
+   See the NOTICE file distributed with this work for additional information regarding copyright 
+   ownership. The ASF licenses this file to you under the Apache License, Version 2.0 (the 
+   "License"); you may not use this file except in compliance with the License. You may obtain a 
+   copy of the License at
+   
+   http://www.apache.org/licenses/LICENSE-2.0
+   
+   Unless required by applicable law or agreed to in writing, software distributed under the License 
+   is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either 
+   express or implied. See the License for the specific language governing permissions and 
+   limitations under the License. 
+-->
+<html>
+
+<head>
+    <!-- 
+      Customize this policy to fit your own app's needs. For more guidance, see: 
+         https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+      Some notes: 
+         * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication 
+         * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly 
+         * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this: 
+            * Enable inline JS: add 'unsafe-inline' to default-src 
+      -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Mobile Angular UI Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
+    <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/mobile-angular-ui-hover.min.css" />
+    <link rel="stylesheet" href="css/mobile-angular-ui-base.min.css" />
+    <link rel="stylesheet" href="css/mobile-angular-ui-desktop.min.css" />
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/mobile-angular-ui.min.js"></script>
+    <script src="js/ionic.js"></script>
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="js/app.js"></script>
+</head>
+
+<body ng-app="myFirstApp" ng-controller="MainController">
+    <!-- Sidebars -->
+    <div class="sidebar sidebar-left">
+        <div class="scrollable">
+            <h1 class="scrollable-header app-name">Tutorials</h1>
+            <div class="scrollable-content">
+                <div class="list-group" ui-turn-off='uiSidebarLeft'>
+                    <a class="list-group-item" href="/">Home Page </a>
+                    <a class="list-group-item" href="#/academic"><i class="fa fa-caret-right"></i>Academic Tutorials
+                    </a>
+                    <a class="list-group-item" href="#/bigdata"><i class="fa fa-caret-right"></i>Big Data & Analytics
+                    </a>
+                    <a class="list-group-item" href="#/computerProg"><i class="fa fa-caret-right"></i>Computer
+                        Programming </a>
+                    <a class="list-group-item" href="#/computerscience"><i class="fa fa-caret-right"></i>Computer
+                        Science </a>
+                    <a class="list-group-item" href="#/databases"><i class="fa fa-caret-right"></i>Databases </a> <a
+                        class="list-group-item" href="#/devops"><i class="fa fa-caret-right"></i>DevOps </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar sidebar-right">
+        <div class="scrollable">
+            <h1 class="scrollable-header app-name">eBooks</h1>
+            <div class="scrollable-content">
+                <div class="list-group" ui-toggle="uiSidebarRight">
+                    <a class="list-group-item" href="#/php"><i class="fa fa-caret-right"></i>PHP </a>
+                    <a class="list-group-item" href="#/Javascript"><i class="fa fa-caret-right"></i>Javascript </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="app">
+        <div class="navbar navbar-app navbar-absolute-top">
+            <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
+                TutorialsPoint
+            </div>
+            <div class="btn-group pull-left">
+                <div ui-toggle="uiSidebarLeft" class="btn sidebar-left-toggle">
+                    <i class="fa fa-th-large "></i> Tutorials
+                </div>
+            </div>
+            <div class="btn-group pull-right" ui-yield-to="navbarAction">
+                <div ui-toggle="uiSidebarRight" class="btn sidebar-right-toggle">
+                    <i class="fal fa-search"></i> eBooks
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-app navbar-absolute-bottom">
+            <div class="btn-group justified">
+                <a ui-turn-on="aboutus_modal" class="btn btn-navbar"><i class="fal fa-globe"></i> About us</a>
+                <a ui-turn-on="contactus_overlay" class="btn btn-navbar"><i class="fal fa-map-marker-alt"></i> Contact
+                    us</a>
+            </div>
+        </div>
+
+        <!-- App body -->
+        <div class='app-body'>
+            <div class='app-content'>
+                <ng-view></ng-view>
+            </div>
+        </div>
+    </div><!-- ~ .app -->
+
+    <!-- Modals and Overlays -->
+    <div ui-yield-to="modals"></div>
+
+    <div class="app">
+        <h1>Apache Cordova</h1>
+        <div id="deviceready" class="blink">
+            <p class="event listening">Connecting to Device</p>
+            <p class="event received">Device is Ready</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
