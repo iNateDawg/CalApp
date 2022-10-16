@@ -1,10 +1,25 @@
 {
-  "scripts":{ 
-
-    },
+  "scripts": {
+    "test": "jasmine "
+  },
   "dependencies": {
-    
     "angular": "^1.8.2",
+    "jasmine": "^4.4.0",
     "yarn": "^1.22.19"
-  }
+  },
+  "name": "calapp",
+  "description": "### Plans - Track calories day to day - Plan meal prep for the week - Store meal prep recipes for later use - Add ability to store recipes for others to use - (Maybe) Generate recommend calories based on goals and body information",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iNateDawg/CalApp.git"
+  },
+  "author": "Nathan McFarland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iNateDawg/CalApp/issues"
+  },
+  "homepage": "https://github.com/iNateDawg/CalApp#readme"
 }
