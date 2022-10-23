@@ -1,0 +1,14 @@
+$base-color: #2b2b2b;
+$text-color: #efefef;
+$text-background: #097ce7;
+$title-color: #56bdfcff;
+$header-button: #56bcfcb2;
+$black: #000000;
+
+@mixin linear-gradient($direction, $list) {
+	background: -webkit-linear-gradient($direction, $list);
+	background: -moz-linear-gradient($direction, $list);
+	background: -o-linear-gradient($direction, $list);
+	background: linear-gradient($direction, $list);
+}
+

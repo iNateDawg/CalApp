@@ -1,15 +1,12 @@
 import React from 'react'
-import './AppWrapper.css';
-import MainPage from './mainPage/mainPage'
+import './AppWrapper.scss'
+import MainPage from './main-page/mainPage'
 
-function AppWrapper() {
-  return (
-    <div className="AppWrapper">
-      <header className="main-header">
-        <MainPage />
-      </header>
-    </div>
-  );
+const AppWrapper = () => {
+	return (
+		<div className='app-wrapper'>
+			<MainPage />
+		</div>
+	)
 }
-
-export default AppWrapper;
+export default AppWrapper
