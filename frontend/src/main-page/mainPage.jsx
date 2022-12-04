@@ -1,6 +1,6 @@
 import React from 'react'
 import './mainPage.scss'
-import TrackChart from '../charts/tracking/TrackChart'
+import TrackChart from '../charts/TrackChart'
 
 const topBar = () => {
 	return (
